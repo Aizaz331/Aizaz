@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      td {
+        font-weight: bold;
+        color: rgb(87, 1, 1);
+        cursor: pointer;
+      }
+      td:hover {
+        color: red;
+      }
+      #demo {
+        background-color: green;
+        height: 500px;
+        width: 500px;
+        transition: 4s;
+        cursor: pointer;
+      }
+      #demoP {
+        display: none;
+        transition: 0.5s;
+        padding: 250px 0;
+        font-size: 32px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="demo" onclick="myfunction()" on>
+      <center>
+        <div id="demoP">Lorem, ipsum dolor.</div>
+      </center>
+    </div>
+    <h1>Show data in table by using Jquery</h1>
+    <table border="10" style="width: 100%; text-align: center">
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td >Class</td>
+          <td>Roll no</td>
+          <td>Age</td>
+          <td>Nationality</td>
+        </tr>
+      </thead>
+      <tbody id="displayarea"></tbody>
+    </table>
+    <br />
+    <br />
+    <br />
+    <div
+      class="formdata"
+      style="text-align: center; font-size: 20px; font-weight: bold"
+    >
+      <form action="" method="post" id="myform">
+        Name: <input type="text" name="name" /><br /><br />
+        Roll: <input type="text" name="roll" /><br /><br />
+        class: <input type="text" name="class" /><br /><br />
+        Age : <input type="text" name="Age" id="" /><br /><br />
+        Nationality: <input type="text" name="nid" /><br /><br />
+        <input
+          type="submit"
+          name="sub"
+          value="submit"
+          style="width: 200px; height: 50px"
+        />
+      </form>
+      <script type="text/javascript">
+        $("#myform").submit(function () {
+          event.preventDefault();
+          var $inputs = $("#myform :input");
+          var values = {};
+          $inputs.each(function () {
+            values[this.name] = $(this).val();
+          });
+          $("#displayarea").append(
+            "<tr><td>" +
+              values.name +
+              "</td><td>" +
+              values.roll +
+              "</td><td>" +
+              values.class +
+              "</td><td>" +
+              values.Age +
+              "</td><td>" +
+              values.nid +
+              "</td></tr>"
+          );
+          $("input[type=text], textarea").val("");
+        });
+
+        function myfunction() {
+          document.getElementById("demo").style.backgroundColor = "red";
+          document.getElementById("demo").style.margin = "0  200px";
+          document.getElementById("demo").style.width = "700px";
+          document.getElementById("demo").style.height = "700px";
+
+          document.getElementById("demoP").style.display = "block";
+        }
+        function Myfunction() {
+          document.getElementById("demo").style.backgroundColor = "green";
+          document.getElementById("demo").style.margin = "0 0";
+          document.getElementById("demoP").style.display = "none";
+          document.getElementById("demo").style.width = "500px";
+          document.getElementById("demo").style.height = "500px";
+        }
+      </script>
+    </div>
+  </body>
+</html>
