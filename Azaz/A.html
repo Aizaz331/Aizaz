@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body{
+        
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="img"
+      id="img"
+      onclick="hello()"
+      style="transition: 5s ease-in-out"
+      ondblclick="hi()"
+    >
+      <ul style="list-style-type: none">
+        <li>SIUUUUU</li>
+        <li>SIUUUUU</li>
+        <li>SIUUUUU</li>
+        <li>SIUUUUU</li>
+      </ul>
+      <button>Click</button>
+    </div>
+    <script>
+
+      
+      function hello() {
+        let a = (document.getElementById("img").style.paddingLeft = "2000px");
+        document.getElementById("img").style.fontSize = "50px";
+      }
+      function hi() {
+        let a = (document.getElementById("img").style.padding = "0");
+      }
+    </script>
+  </body>
+</html>
